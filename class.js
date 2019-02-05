@@ -46,18 +46,6 @@ addTag.addText = 'some text';
 // вычисления.
 
 
-// class Calculate {
-//     constructor(value = 0) {
-//         this.number = value;
-//     }
-//     get number() {
-//         return this.number;
-//     }
-//     set number(value) {
-//         this.number = value;
-//     }
-
-// }
 
 class Calculate {
     constructor(value = 0) {
