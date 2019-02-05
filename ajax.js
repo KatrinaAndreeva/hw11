@@ -23,11 +23,13 @@ class CustomHttp {
         xhr.addEventListener('load', () => callback(xhr.responseText));
     }
 }
+
 const httpClient = new CustomHttp();
 httpClient.get('https://jsonplaceholder.typicode.com/users', (response) => {
     let jsonRes = JSON.parse(response),
         html = '';
-    for (let i = 0; i < jsonRes.length; i++) {
+        let len = jsonRes.length;
+    for (let i = 0; i < len; i++) {
         html += '<div componentid="' + jsonRes[i].id + '" class="trow">';
         html += '<span>' + jsonRes[i].name + '</span>';
         html += '<div class="dropdown hide">';
