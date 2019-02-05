@@ -23,9 +23,13 @@ class CustomHttp {
         xhr.addEventListener('load', () => callback(xhr.responseText));
     }
 }
-
+function getUsers() {
 const httpClient = new CustomHttp();
 httpClient.get('https://jsonplaceholder.typicode.com/users', (response) => {
+    users(response);
+});
+}
+    function users(response) {
     let jsonRes = JSON.parse(response),
         html = '';
         let len = jsonRes.length;
@@ -44,7 +48,7 @@ httpClient.get('https://jsonplaceholder.typicode.com/users', (response) => {
         html += '</div>';
     }
     document.getElementById("top_div_users").innerHTML = html;
-});
+}
 document.addEventListener('click', function(e) {
     if (e.target.tagName != 'SPAN') return;
     let dropdown = e.target.nextElementSibling;
