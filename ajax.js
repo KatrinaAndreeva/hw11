@@ -27,7 +27,6 @@ const httpClient = new CustomHttp();
 httpClient.get('https://jsonplaceholder.typicode.com/users', (response) => {
     let jsonRes = JSON.parse(response),
         html = '';
-    html += '<div class="user_counts">' + jsonRes.length + '</div>';
     for (let i = 0; i < jsonRes.length; i++) {
         html += '<div componentid="' + jsonRes[i].id + '" class="trow">';
         html += '<span>' + jsonRes[i].name + '</span>';
