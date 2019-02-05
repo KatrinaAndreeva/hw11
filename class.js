@@ -59,7 +59,7 @@ addTag.addText = 'some text';
 
 // }
 
-class calkulator {
+class Calculate {
     constructor(value = 0) {
         this.number = value;
     }
@@ -69,7 +69,7 @@ class calkulator {
     set_number(val) {
         this.number = val;
     }
-    fold(i, i2) {
+    plus(i, i2) {
         if (!Number.isInteger(i)) return;
         if (i2 == undefined || !Number.isInteger(i2)) {
             i2 = i;
@@ -102,8 +102,8 @@ class calkulator {
         return (i * i2);
     }
 }
-const calk = new calkulator(0);
+const calk = new Calculate(0);
 calk.set_number(10);
-console.log(calk.fold(5));
-console.log(calk.fold(5, 5));
+console.log(calk.plus(5));
+console.log(calk.plus(5, 5));
 console.log(calk.multiply(5));

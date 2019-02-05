@@ -27,9 +27,8 @@ const httpClient = new CustomHttp();
 httpClient.get('https://jsonplaceholder.typicode.com/users', (response) => {
     let jsonRes = JSON.parse(response),
         html = '';
-    //var data=jsonResponse.toSource();
     html += '<div class="user_counts">' + jsonRes.length + '</div>';
-    for (i = 0; i < jsonRes.length; i++) {
+    for (let i = 0; i < jsonRes.length; i++) {
         html += '<div componentid="' + jsonRes[i].id + '" class="trow">';
         html += '<span>' + jsonRes[i].name + '</span>';
         html += '<div class="dropdown hide">';
@@ -47,11 +46,10 @@ httpClient.get('https://jsonplaceholder.typicode.com/users', (response) => {
 });
 document.addEventListener('click', function(e) {
     if (e.target.tagName != 'SPAN') return;
-    // || e.target.nextElementSibling.tagName!='DIV'
     let dropdown = e.target.nextElementSibling;
     if (dropdown.classList.contains('hide')) {
         let dropdownshow = document.querySelectorAll('.dropdown.show');
-        for (i = 0; i < dropdownshow.length; i++) {
+        for (let i = 0; i < dropdownshow.length; i++) {
             dropdownshow[i].className = "dropdown hide";
         }
         dropdown.className = "dropdown show";
@@ -59,4 +57,4 @@ document.addEventListener('click', function(e) {
     else {
         dropdown.className = "dropdown hide";
     }
-})
+});
